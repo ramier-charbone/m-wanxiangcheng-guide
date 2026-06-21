@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万象城 · 信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', 'Songti SC', serif;
+      background: #fbfaf7;
+      color: #2b2a27;
+      line-height: 1.75;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fffdfa;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      padding: 2.5rem 2rem 3rem;
+    }
+
+    @media (min-width: 600px) {
+      .page {
+        padding: 3.5rem 3.5rem 4rem;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border-left: 4px solid #b8a07c;
+      padding-left: 1rem;
+      margin-bottom: 0.75rem;
+      color: #3f3a33;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #6f6960;
+      margin-bottom: 2.2rem;
+      padding-left: 1.4rem;
+      border-bottom: 1px solid #ece7df;
+      padding-bottom: 0.9rem;
+    }
+
+    .hero-block {
+      background: #f6f2eb;
+      padding: 1.8rem 1.8rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-block p {
+      font-size: 1.05rem;
+      color: #3d3830;
+    }
+
+    .hero-block strong {
+      color: #8b7355;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-top: 2.2rem;
+      margin-bottom: 1rem;
+      color: #4c453b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title::before {
+      content: "⸻";
+      color: #c7b69a;
+      font-size: 1.1rem;
+      letter-spacing: -0.1em;
+      margin-right: 0.2rem;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+
+    @media (min-width: 600px) {
+      .grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #fcf9f5;
+      border: 1px solid #e8e0d4;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #5f5445;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #555049;
+    }
+
+    .callout {
+      background: #f3efe8;
+      border-left: 4px solid #b8a07c;
+      padding: 1.2rem 1.5rem;
+      margin: 1.8rem 0 1.2rem;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.98rem;
+      color: #3d3830;
+    }
+
+    .callout strong {
+      color: #7d6b50;
+    }
+
+    .faq-mini {
+      margin: 2rem 0 1.2rem;
+      padding: 0.2rem 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ede7de;
+      padding: 0.9rem 0;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #4a4239;
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.98rem;
+    }
+
+    .faq-a {
+      color: #5d564c;
+      font-size: 0.92rem;
+      padding-left: 0.3rem;
+    }
+
+    .info-footer {
+      margin-top: 2.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e6dfd3;
+      font-size: 0.9rem;
+      color: #6f6860;
+      line-height: 1.6;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .info-footer a {
+      color: #7d6b50;
+      text-decoration: none;
+      border-bottom: 1px dotted #c7b69a;
+      transition: border-color 0.1s;
+    }
+
+    .info-footer a:hover {
+      border-bottom: 1px solid #7d6b50;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ece5db;
+      color: #4f473d;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      margin-right: 0.3rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8e0d4;
+      margin: 1.8rem 0;
+    }
+
+    .quiet-link {
+      color: #7d6b50;
+      text-decoration: none;
+      border-bottom: 1px solid #dacebf;
+    }
+
+    .quiet-link:hover {
+      border-bottom: 1px solid #7d6b50;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>万象城 · 信息索引</h1>
+  <div class="subhead">一个稳定、可查阅的页面说明与知识入口</div>
+
+  <div class="hero-block">
+    <p>这个页面更像一张折叠起来的便签——写明了 <strong>万象城</strong> 是什么、去哪找、以及它可能对你哪些事情有用。没有冗余的推介，只有安静的说明与关联信息。如果你只是在寻找一个可靠的落脚点，下面这些内容或许恰好是你需要的。</p>
+  </div>
+
+  <!-- 介绍区 -->
+  <div class="section-title">关于这个名称</div>
+  <p style="margin-bottom:0.8rem;"><a href="https://m-wanxiangcheng.com" style="color:#7d6b50;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#c7b69a;">万象城</a> 并没有指向某个具体的商业体或城市地标，而是一个在移动端保持一致的网络标识。它更像一个地址簿里的固定条目，用来承载信息而不是商品。在多数语境下，这个词代表一个稳定的线上坐标，便于归类与回溯。</p>
+  <p>如果你曾在不同时间、不同设备上看到同一组信息，或许会理解这种「入口即索引」的便利——不必重新搜索，也不必记忆冗长的链接。</p>
+
+  <!-- 特点 / 场景 卡片区 -->
+  <div class="section-title">几个常见的使用场景</div>
+  <div class="grid-cards">
+    <div class="card">
+      <h3>· 作为记录锚点</h3>
+      <p>把一组资料、说明或参考链接集中在一个名称下，方便后续查找。万象城在这里扮演目录的角色。</p>
+    </div>
+    <div class="card">
+      <h3>· 跨设备同步</h3>
+      <p>在手机、平板或电脑上打开同一个名称，看到的应该是相同的结构。移动端优先的设计让排版一致。</p>
+    </div>
+    <div class="card">
+      <h3>· 轻量信息中转</h3>
+      <p>不需要打开多个页面，也不需要登录。万象城本身就是一个直达的信息台，适合快速浏览与核对。</p>
+    </div>
+    <div class="card">
+      <h3>· 安静的书签替代</h3>
+      <p>有些页面你不一定每天看，但需要的时候能迅速找到。万象城这类入口就适合放在收藏夹的角落。</p>
+    </div>
+  </div>
+
+  <!-- 提示区 引用块风格 -->
+  <div class="callout">
+    <strong>提示</strong> · 如果你是通过某个分享链接或文档中的指引来到这个页面，那么 <a href="https://m-wanxiangcheng.com" style="color:#7d6b50;text-decoration:underline;text-underline-offset:2px;text-decoration-color:#b8a07c;">万象城</a> 就是你当前需要的地址。建议在浏览器中为它创建一个独立标签页，或添加到主屏幕，方便日后直接使用。
+  </div>
+
+  <!-- FAQ 摘要 相关信息区 -->
+  <div class="section-title">常见疑问摘要</div>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <span class="faq-q">万象城需要注册或登录吗？</span>
+      <span class="faq-a">不需要。它是一个公开的信息页面，没有用户系统或权限限制，打开即可浏览。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">会频繁变更内容吗？</span>
+      <span class="faq-a">结构保持稳定，但内部说明、参考链接或提示信息可能会根据实际需要调整，以保持准确。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">如何在手机上获得更好的阅读体验？</span>
+      <span class="faq-a">页面已针对竖屏和触控优化，字体大小、间距和卡片布局都会自适应。你也可以使用浏览器的“阅读模式”。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">万象城与其他“万象城”命名有何区别？</span>
+      <span class="faq-a">此为独立网络索引地址，并非商业综合体或品牌。名称相同但语境不同，使用时留意上下文即可。</span>
+    </div>
+  </div>
+
+  <!-- 额外相关信息区：标签 / 关联 -->
+  <div style="margin:1.8rem 0 1.2rem; display:flex; flex-wrap:wrap; gap:0.4rem 0.7rem;">
+    <span class="badge">信息入口</span>
+    <span class="badge">移动端适配</span>
+    <span class="badge">静态索引</span>
+    <span class="badge">知识库风格</span>
+    <span class="badge">无登录</span>
+    <span class="badge">轻量目录</span>
+  </div>
+
+  <hr>
+
+  <div class="info-footer">
+    <span>页面方向 · 知识库入口 / 说明与提示</span>
+    <span><a href="https://m-wanxiangcheng.com">万象城</a> · 稳定地址</span>
+  </div>
+
+  <!-- 极简脚注，仅作为页面完整性 -->
+  <div style="margin-top:0.8rem; font-size:0.75rem; color:#9d9488; text-align:right; letter-spacing:0.03em;">
+    —— 索引页 · 内容自然生成
+  </div>
+
+</div>
+</body>
+</html>
